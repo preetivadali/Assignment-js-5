@@ -14,11 +14,20 @@ let account = {
             console.log("Nothing deposited");
         }
     },
-
+    
+    withdrawal(drawn){
+        if(typeof drawn === "number" &&  drawn > 0){
+            this.balance -= drawn;
+            console.log(`${drawn.toFixed(2)} is withdrawn from your account.`);
+        } else {
+            console.log("Nothing is winthdrawn");
+        }
+    }
    
 };
 
 // Testing the methods
 account.getBalance();
 account.deposit(500); 
+account.withdrawal(100);
 
